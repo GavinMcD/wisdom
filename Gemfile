@@ -18,16 +18,19 @@ end
 
 gem 'jquery-rails'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development do
+    gem 'webbynode'                     # Recommended hosting provider.
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+group :development, :test do
+  gem 'rspec-rails'                     # Use rspec to do our integration tests.
+  gem 'factory_girl_rails'              # Factory girls makes it easy to mock objects for our tests.
+  gem 'capybara'                        # Capybara lets us drive our integration tests via headless browser.
+  gem 'launchy'                         # Launchy let's us launch the current state of the app in the browser if we need to diagnose.
+  gem 'database_cleaner'                # Necessary for undoing transactions in the database during our integration tests.
+  gem 'sqlite3'                         
+  gem 'evergreen', :require => 'evergreen/rails'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
 end
