@@ -1,4 +1,13 @@
 Wisdom::Application.routes.draw do
+  root :to => 'users#new'
+
+  resources :sessions 
+  get "sign_in" => "sessions#new", :as => "sign_in" 
+  get "sign_out" => "sessions#destroy", :as => "sign_out"
+
+  resources :users
+  get "sign_up" => "users#new", :as => "sign_up"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +57,6 @@ Wisdom::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
