@@ -1,6 +1,12 @@
 module ApplicationHelper
   
-  # src: http://www.emersonlackey.com/article/rails3-error-messages-for-replacement
-  
+  def title
+    base_title = "Wisdom"
+    if @title.nil?
+      base_title
+    else
+      "#{base_title} | #{@title}"
+    end
+  end
   
 end

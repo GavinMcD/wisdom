@@ -1,4 +1,8 @@
 Wisdom::Application.routes.draw do
+  get "pages/home"
+  get "pages/contact"
+  get "pages/about"
+
   root :to => 'users#new'
 
   resources :sessions 
