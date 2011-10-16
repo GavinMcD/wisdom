@@ -1,0 +1,6 @@
+<% for user in @users %>
+  <p>
+		<%= gravatar_for user %>
+		<%= link_to user.email, user_path(user) %>
+  </p>
+<% end %>
