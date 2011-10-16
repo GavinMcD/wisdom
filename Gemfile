@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'rack' , '1.3.3'                        # source: http://gunnertech.com/2011/10/warning-already-initialized-constant-wfkv_/
 gem "bcrypt-ruby", :require => "bcrypt"     # Railscast 250: http://railscasts.com/episodes/250-authentication-from-scratch?autoplay=true
+gem 'gravatar_image_tag'                    # Gravater - https://github.com/mdeering/gravatar_image_tag
 
 # Gems used only for assets and not required
 # in production environments by default.
