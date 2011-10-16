@@ -3,7 +3,7 @@
 <%= form_for @user do |f| -%>
 
 	<%= render "shared/errors", :object => f.object %>
-	
+
 	<p>	
 		<%= f.label :email, "Your Email" %>
 		<%= f.text_field :email %>
@@ -19,5 +19,5 @@
 	<p>
 		<%= f.submit "Give Your First Piece of Advice" %>
 	</p>
-  
+ 
 <% end -%>

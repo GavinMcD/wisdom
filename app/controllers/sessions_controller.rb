@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   force_ssl
   
   def new
+    @title = "Sign In"
   end
 
   # This logs a user in
@@ -12,7 +13,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, :notice => "Great job signing in"
+      redirect_to user_path(user), :notice => "Great job signing in"
     else
       flash.now.alert = "Your password or email was invalid...please try it again"
       render "new"

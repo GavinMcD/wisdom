@@ -1,8 +1,9 @@
 Wisdom::Application.routes.draw do
   get "contact" => "pages#contact", :as => "contact"
   get "about" => "pages#about", :as => "about"
+  get "home" => "pages#home", :as => "home"
 
-  root :to => 'users#new'
+  root :to => "pages#home"
 
   resources :sessions 
   get "sign_in" => "sessions#new", :as => "sign_in" 
