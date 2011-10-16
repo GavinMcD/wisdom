@@ -1,5 +1,4 @@
 Wisdom::Application.routes.draw do
-  get "home" => "pages#home", :as => "home"
   get "contact" => "pages#contact", :as => "contact"
   get "about" => "pages#about", :as => "about"
 
