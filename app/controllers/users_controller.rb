@@ -52,6 +52,6 @@ class UsersController < ApplicationController
   
   def correct_user
     user = User.find(params[:id])
-    redirect_to root_path unless current_user == user
+    redirect_to root_path, :notice => "You aren't the right user" unless current_user == user
   end
 end

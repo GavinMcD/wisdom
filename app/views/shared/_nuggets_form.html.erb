@@ -2,11 +2,11 @@
   <%= render "shared/errors", :object => f.object %>
 	<div>
 		<%= f.label :audience, "My advice to" %>
-		<%= f.text_field :audience %>
+		<%= f.text_field :audience, :placeholder => "a group of people"  %>
 		<%= f.label :topic, "about " %>
-		<%= f.text_field :topic %>
+		<%= f.text_field :topic, :placeholder => "something useful"  %>
 		<%= f.label :body, "is this:" %>
-		<%= f.text_field :body %>
+		<%= f.text_field :body, :placeholder => "You should...."  %>
 	</div>
 	<div>
 		<%= f.submit "Give Advice" %>
