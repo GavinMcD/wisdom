@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   
   # new columns need to be added here to be writable through mass assignment
   # whenever you create or update a model in your controllers by using mass assignment
-  attr_accessible :email, :password, :password_confirmation, :description
+  attr_accessible :email, :password, :password_confirmation, :description, :username
   
   # Validations
   # -----------------------------------
@@ -17,5 +17,6 @@ class User < ActiveRecord::Base
   validates_format_of       :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
   validates_uniqueness_of   :email
   validates_presence_of     :email, :on => :create
+  validates_presence_of     :username, :on => :create, :message => "can't be blank"
 
 end

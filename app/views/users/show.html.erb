@@ -1,9 +1,23 @@
 <h2>Give some advice:</h2>
 <%= render "shared/nuggets_form" %><br />
 
-<h2>Your Info:</h2>
-<h4>email: <%= @user.email %></h4>
-<h4>personal link: <%= link_to user_path(@user), @user %></h4><br />
+<% if current_user.id == @user.id %>
+	<h2>Your Info:</h2>
+	<h4>edit: <%= link_to "change your settings", edit_user_path(@user) %></h4>
+	<h4>email: <%= @user.email %></h4>
+	<h4>personal link: <%= link_to user_path(@user), @user %></h4>
+	<p>Some Details about You:</p>
+	<p><%= @user.description %></p>
+<% else %>
+	<% if !@user.username.nil? %>
+  	<h2><%= @user.username %>'s Info:</h2>
+	<% else %>
+	  <h2><%= @user.email %>'s Info:</h2>
+	<% end %>
+	<h4>personal link: <%= link_to user_path(@user), @user %></h4>
+	<p>Some Details:</p>
+	<p><%= @user.description %></p>
+<% end %>
 
 <% if @user.nuggets.empty? %>
 	<h2>No advice given yet</h2>
