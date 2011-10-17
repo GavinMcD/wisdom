@@ -1,0 +1,14 @@
+<%= form_for @nugget do |f| -%>
+  <%= render "shared/errors", :object => f.object %>
+	<div>
+		<%= f.label :audience, "My advice to" %>
+		<%= f.text_field :audience %>
+		<%= f.label :topic, "about " %>
+		<%= f.text_field :topic %>
+		<%= f.label :body, "is this:" %>
+		<%= f.text_field :body %>
+	</div>
+	<div>
+		<%= f.submit "Give Advice" %>
+	</div>
+<% end -%>

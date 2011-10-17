@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :except => [:new, :create]
+  before_filter :correct_user, :only => [:edit, :update]
+  
   def index
     @users = User.all
     @title = "All wisdom givers"
@@ -20,6 +23,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @nuggets = @user.nuggets
+    @nugget = Nugget.new
   end
   
   def edit
@@ -41,5 +46,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path, :success => "The user was deleted"
+  end
+  
+  private 
+  
+  def correct_user
+    user = User.find(params[:id])
+    redirect_to root_path unless current_user == user
   end
 end

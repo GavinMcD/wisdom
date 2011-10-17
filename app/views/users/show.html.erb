@@ -1,1 +1,13 @@
-<h1><%= @user.email %></h1>
+<h2>Give some advice:</h2>
+<%= render "shared/nuggets_form" %><br />
+
+<h2>Your Info:</h2>
+<h4>email: <%= @user.email %></h4>
+<h4>personal link: <%= link_to user_path(@user), @user %></h4><br />
+
+<% if @user.nuggets.empty? %>
+	<h2>No advice given yet</h2>
+<% else %>
+	<h2>Advice you've given:</h2>
+	<%= render @nuggets %>
+<% end %>

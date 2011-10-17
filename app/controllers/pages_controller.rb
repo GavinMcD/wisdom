@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   
   def home
     @title = "Home"
+    @nuggets = Nugget.all
+    if current_user
+      @nugget = Nugget.new 
+    end
   end
   
   def about

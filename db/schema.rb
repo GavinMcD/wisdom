@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015050128) do
+ActiveRecord::Schema.define(:version => 20111016230517) do
+
+  create_table "nuggets", :force => true do |t|
+    t.string   "audience"
+    t.string   "topic"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "nuggets", ["audience"], :name => "index_nuggets_on_audience"
+  add_index "nuggets", ["topic"], :name => "index_nuggets_on_topic"
+  add_index "nuggets", ["user_id"], :name => "index_nuggets_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
