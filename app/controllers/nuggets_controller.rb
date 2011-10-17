@@ -12,10 +12,11 @@ class NuggetsController < ApplicationController
   
   def destroy
     @nugget = current_user.nuggets.find(params[:id])
-    if @nugget.user == current_user 
+    # ask someone if I need these lines...
+    # if @nugget.user == current_user 
       @nugget.destroy
       redirect_to root_path, :notice => "You deleted some of your advice...not cool"
-    end
+    # end
   end
 
 end
