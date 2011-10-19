@@ -1,6 +1,23 @@
+<h1>Wise Folks</h1>
+
 <% for user in @users %>
-  <p>
-		<%= gravatar_for user %>
-		<%= link_to user.email, user_path(user) %>
-  </p>
+	<div class="row">
+		<div class="span2">
+			<%= gravatar_for user %>
+		</div>
+		<div class="span14">
+			<h4><%= link_to user.username, user_path(user) %></h4>
+			
+			<% if user.nuggets.count > 0 %>
+				<p>They've made you <%= link_to "#{pluralize(user.nuggets.count, "time")}", user_path(user) %> wiser</p>
+			<% else %>
+			  <p>They've made you none the wiser</p>
+			<% end %>
+			
+			<% if !user.description.nil? %>
+				<p><strong>The Skinny:</strong> <%= user.description %></p>
+			<% end %>
+			
+		</div>
+	</div><br/>
 <% end %>
