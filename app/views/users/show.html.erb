@@ -6,7 +6,7 @@
 		<% if @user.nuggets.empty? %>
 			<h2>No advice given yet</h2>
 		<% else %>
-			<h2>Advice Given:</h2>
+			<h2>My <%= pluralize(@user.nuggets.count, "Piece")%> of Advice</h2>
 			<%= render @nuggets %>
 		<% end %>
 	</div>

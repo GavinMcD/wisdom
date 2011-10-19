@@ -1,7 +1,11 @@
+<%= gravatar_for(@user, :gravatar => {:size => 50}) %>
+
 <h3>Your Info</h3>
-<p>edit: <%= link_to "Settings", edit_user_path(@user) %></p>
+<p>edit: <%= link_to "info", edit_user_path(@user) %></p>
 <p>email: <%= @user.email %></p>
 <p>link: <%= link_to user_path(@user), @user %></p><br />
 
-<h3>Short Description</h3>
-<p><%= @user.description %></p>
+<% if !@user.description.nil? %>
+	<h3>Short Description</h3>
+	<p><%= @user.description %></p>
+<% end %>

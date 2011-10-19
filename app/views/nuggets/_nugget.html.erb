@@ -1,10 +1,7 @@
 <hr>
-<p>
-	My advice to <strong><%= nugget.audience %></strong> about <strong><%= nugget.topic %></strong> is this:
-</p>
-<p>
-	<%= nugget.body %>
-</p>
+
+<p>My advice to <strong><%= nugget.audience %></strong> about <strong><%= nugget.topic %></strong> is this:</p>
+<p><%= nugget.body %></p><br />
 <% if nugget.user == current_user %>
-<%= link_to "delete", nugget, :method => :delete, :confirm => "sure?"%>
+	<%= link_to "remove", nugget, :method => :delete, :confirm => "Was your advice bad?"%>
 <% end %>

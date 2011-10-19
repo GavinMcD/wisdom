@@ -1,0 +1,16 @@
+<hr>
+<% for nugget in @nuggets %>
+	<div class="row">
+		<div class="span14">
+				<p><%= link_to nugget.user.username, user_path(nugget.user) %> says:</p>
+				<p>My advice to <strong><%= nugget.audience %></strong> about <strong><%= nugget.topic %></strong> is this:</p>
+				<p><%= nugget.body %></p>
+		</div>
+		<div class="span2">
+				<% if nugget.user == current_user %>
+					<%= link_to "remove", nugget, :method => :delete, :confirm => "It is not OK to remove your advice."%>
+				<% end %>
+		</div>
+	</div>
+	<hr>
+<% end %>
