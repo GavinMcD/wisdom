@@ -29,16 +29,15 @@
 </div>
 
 
-<div class="container">
-	<div class="flash-message">
-		<% flash.each do |name, msg| %>
-	  	<%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message" %>
-		<% end %>
-	</div>	
+<div class="container-body">
+	<div class="container">
+			<% flash.each do |name, msg| %>
+		  	<%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message" %>
+			<% end %>
 
-	<div>
-		<%= yield %>
-		<%= debug(params) if Rails.env.development? %>
+			<%= yield %>
+			<%= debug(params) if Rails.env.development? %>
+
 	</div>
 </div>
 

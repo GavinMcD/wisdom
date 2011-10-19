@@ -1,34 +1,43 @@
 <h2>Your Info</h2><br />
 
-<div class="form-stacked">
-<%= form_for @user do |f| -%>
-	<%= render "shared/errors", :object => f.object %>
-	<p>	
-		<%= f.label :username, "Full Name" %>
-		<%= f.text_field :username, :placeholder => "Your Full Name"  %>
-	</p>
-	<p>	
-		<%= f.label :email, "Email" %>
-		<%= f.text_field :email %>
-	</p>
-	<p>
-		<%= f.label :password, "Password" %>
-		<%= f.password_field :password, :placeholder => "Secret" %>
-	</p>
-	<p>
-		<%= f.label :password_confirmation, "Confirmation" %>
-		<%= f.password_field :password_confirmation, :placeholder => "Secret" %>
-	</p>
-	<p>	
-		<%= f.label :description, "Short Description" %>
-		<%= f.text_field :description, :placeholder => "Billionaire Playboy, Cigar-Lover, etc..." %>
-	</p>
-</div><br />
+<div class="row">
 	
-	<p>
-		<%= f.submit "Update Your Info", :class => "btn primary" %>
-	</p>
-<% end -%>
-<br />
+	<div class="span2">
+		<%= gravatar_for(@user, :gravatar => {:size => 50}) %>
+		<%= link_to "Change", "http://gravatar.com/emails" %>
+	</div>
 
-<p>(Or go <%= link_to "back to your profile", user_path(@user) %>)</p>
+	<div class="span14">
+		<div class="form-stacked">
+		
+		<%= form_for @user do |f| -%>
+			<%= render "shared/errors", :object => f.object %>
+			<p>	
+				<%= f.label :username, "Full Name" %>
+				<%= f.text_field :username, :placeholder => "Your Full Name"  %>
+			</p>
+			<p>	
+				<%= f.label :email, "Email" %>
+				<%= f.text_field :email %>
+			</p>
+			<p>
+				<%= f.label :password, "Password" %>
+				<%= f.password_field :password, :placeholder => "Secret" %>
+			</p>
+			<p>
+				<%= f.label :password_confirmation, "Confirmation" %>
+				<%= f.password_field :password_confirmation, :placeholder => "Secret" %>
+			</p>
+			<p>	
+				<%= f.label :description, "Short Description" %>
+				<%= f.text_field :description, :placeholder => "Billionaire Playboy, Cigar-Lover, etc..." %>
+			</p>
+		
+		</div><br />
+		
+		<p><%= f.submit "Update", :class => "btn primary" %></p>
+		<p><%= link_to "Back", user_path(@user) %></p>
+		
+	</div>
+	<% end -%>
+</div>

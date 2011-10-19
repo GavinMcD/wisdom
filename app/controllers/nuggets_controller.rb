@@ -4,9 +4,9 @@ class NuggetsController < ApplicationController
   def create
     @nugget = current_user.nuggets.build(params[:nugget])
     if @nugget.save
-      redirect_to root_path, :notice => "Your advice is awesome - people love your shit!"
+      redirect_to root_path, :notice => "Your advice is now passed on to others"
     else
-      redirect_to root_path, :error => "Something got botched on our side...we'll check it out"
+      redirect_to root_path, :notice => "Make sure your advice is sound"
     end
   end
   

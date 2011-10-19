@@ -9,6 +9,9 @@ class Nugget < ActiveRecord::Base
   
   # Validations
   # -----------------------------------
+  validates_presence_of :audience, :on => :create, :message => "needs to speak to a group"
+  validates_presence_of :topic, :on => :create, :message => "needs a topic"
+  validates_presence_of :body, :on => :create, :message => "needs a body"
   
   default_scope :order => "created_at DESC"
 
