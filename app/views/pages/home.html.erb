@@ -1,8 +1,7 @@
 <% if current_user %>
-	<h2>Give some advice</h2>
+	<h2>Share Your Advice</h2>
 	<%= render "shared/nuggets_form" %>
 <% end %>
 
-<h1>Recent advice for people:</h1>
-
+<h4>Recent Advice Given</h4>
 <%= render @nuggets %>

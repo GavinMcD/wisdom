@@ -1,0 +1,9 @@
+<% if !@user.username.nil? %>
+	<div class="row">
+		<h3><%= @user.username %>'s Info</h3>
+	</div>
+<% end %>
+<p>link: <%= link_to user_path(@user), @user %><p>
+
+<h3>Short Description</h3>
+<p><%= @user.description %></p>

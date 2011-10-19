@@ -1,14 +1,29 @@
 <%= form_for @nugget do |f| -%>
-  <%= render "shared/errors", :object => f.object %>
-	<div>
-		<%= f.label :audience, "My advice to" %>
-		<%= f.text_field :audience, :placeholder => "a group of people"  %>
-		<%= f.label :topic, "about " %>
-		<%= f.text_field :topic, :placeholder => "something useful"  %>
-		<%= f.label :body, "is this:" %>
-		<%= f.text_field :body, :placeholder => "You should...."  %>
-	</div>
-	<div>
-		<%= f.submit "Give Advice" %>
+	<%= render "shared/errors", :object => f.object %>
+		<div class="hero-unit">
+			<div class="form-stacked">
+				<div class="row">
+					<div class="span4 offset1">
+						<%= f.label :audience, "My advice to" %>
+						<%= f.text_field :audience, :placeholder => "a group of people"  %>
+					</div>
+					<div class="span4">
+						<%= f.label :topic, "about " %>
+						<%= f.text_field :topic, :placeholder => "something useful"  %>
+					</div>
+					<div class="span4">
+						<%= f.label :body, "is this:" %>
+						<%= f.text_field :body, :placeholder => "You should...."  %>
+					</div>
+				</div>
+			</div>
+		<br/>
+		<br/>
+		<div class="row">
+			<div class="span4 offset6">
+				<%= f.submit "Give Advice", :class => "btn" %>
+			</div>
+		</div>
 	</div>
 <% end -%>
+<hr/>
