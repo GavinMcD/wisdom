@@ -6,7 +6,7 @@
 		</div>
 		<div class="span12">
 				<p><%= link_to nugget.user.username, user_path(nugget.user) %> says:</p>
-				<p>My advice to <strong><%= link_to "#{nugget.audience}", audience_nuggets_path(:audience => nugget.audience) %></strong> about <strong><%= nugget.topic %></strong> is this:</p>
+				<p>My advice to <%= link_to "#{nugget.audience}", audience_nuggets_path(:audience => nugget.audience) %> about <%= link_to "#{nugget.topic}", topic_nuggets_path(:topic => nugget.topic) %> is this:</p>
 				<p><%= nugget.body %></p>
 		</div>
 		<div class="span2">

@@ -14,6 +14,7 @@ Wisdom::Application.routes.draw do
   
   resources :nuggets do
     get :audience, :on => :collection
+    get :topic, :on => :collection
   end
 
   # The priority is based upon order of creation:

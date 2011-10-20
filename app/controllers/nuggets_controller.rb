@@ -22,4 +22,8 @@ class NuggetsController < ApplicationController
   def audience
     @nuggets = Nugget.find_all_by_audience(params[:audience])
   end
+  
+  def topic
+    @nuggets = Nugget.find_all_by_topic(params[:topic])
+  end
 end

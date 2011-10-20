@@ -1,7 +1,7 @@
 <% if !@nuggets.blank? %>
-	<h2>Advice to <%= @nuggets.first.audience %></h2>	
+	<h2>Advice about <%= @nuggets.first.topic %></h2>	
 	<%= link_to "home", root_path %>
 	<%= render "nuggets/home_page_nuggets" %>
 <% else %>
-  <h2>Sorry - There's no advice for this group</h2>
+  <h2>Sorry - There's no advice on this topic</h2>
 <% end %>
