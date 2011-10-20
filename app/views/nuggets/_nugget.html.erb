@@ -1,5 +1,6 @@
 <hr>
-<p>My advice to <strong><%= link_to "#{nugget.audience}", audience_nuggets_path(:audience => nugget.audience) %></strong> about <strong><%= nugget.topic %></strong> is this:</p>
+<p>My advice to <strong><%= link_to "#{nugget.audience}", audience_nuggets_path(:audience => nugget.audience) %></strong> about <strong><%= nugget.topic %></strong> is this:
+</p>
 <p><%= nugget.body %></p><br />
 <% if nugget.user == current_user %>
 	<%= link_to "remove", nugget, :method => :delete, :confirm => "Was your advice bad?"%>

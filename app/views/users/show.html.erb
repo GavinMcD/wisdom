@@ -13,9 +13,9 @@
 
 	<div class="span4 offset1">
 		<% if current_user.id == @user.id %>
-			<%= render "users/show_logged" %>
+			<%= render "users/profile_logged" %>
 		<% else %>
-			<%= render "users/show_not_logged" %>
+			<%= render "users/profile_not_logged" %>
 		<% end %>
 	</div>
 
