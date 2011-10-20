@@ -1,9 +1,12 @@
 <hr>
 <% for nugget in @nuggets %>
 	<div class="row">
-		<div class="span14">
+		<div class="span2">
+			<%= gravatar_for(nugget.user, :gravatar => {:size => 30}) %>
+		</div>
+		<div class="span12">
 				<p><%= link_to nugget.user.username, user_path(nugget.user) %> says:</p>
-				<p>My advice to <strong><%= nugget.audience %></strong> about <strong><%= nugget.topic %></strong> is this:</p>
+				<p>My advice to <strong><%= link_to "#{nugget.audience}", audience_nuggets_path(:audience => nugget.audience) %></strong> about <strong><%= nugget.topic %></strong> is this:</p>
 				<p><%= nugget.body %></p>
 		</div>
 		<div class="span2">

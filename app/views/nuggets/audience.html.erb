@@ -1,0 +1,6 @@
+<% if !@nuggets.blank? %>
+	<h2>Advice to <%= @nuggets.first.audience %></h2>
+	<%= render "nuggets/home_page_nuggets" %>
+<% else %>
+  <h2>Sorry - There's no advice on that</h2>
+<% end %>

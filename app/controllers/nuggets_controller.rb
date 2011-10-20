@@ -18,5 +18,8 @@ class NuggetsController < ApplicationController
       redirect_to root_path, :notice => "You deleted some of your advice...not cool"
     # end
   end
-
+  
+  def audience
+    @nuggets = Nugget.find_all_by_audience(params[:audience])
+  end
 end

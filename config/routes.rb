@@ -12,7 +12,9 @@ Wisdom::Application.routes.draw do
   resources :users
   get "sign_up" => "users#new", :as => "sign_up"
   
-  resources :nuggets
+  resources :nuggets do
+    get :audience, :on => :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

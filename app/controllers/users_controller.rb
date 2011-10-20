@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    @title = "All wisdom givers"
+    @title = "Advice Givers"
   end
   
   def new

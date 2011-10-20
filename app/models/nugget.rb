@@ -14,5 +14,4 @@ class Nugget < ActiveRecord::Base
   validates_presence_of :body, :on => :create, :message => "needs a body"
   
   default_scope :order => "created_at DESC"
-
 end
